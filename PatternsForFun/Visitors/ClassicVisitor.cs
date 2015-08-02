@@ -12,6 +12,7 @@ namespace PatternsForFun.Visitors
         void Visit(Cat cat);
         void Visit(Dog dog);
         void Visit(Shiba shiba);
+        void Visit(Mutant mutant);
     }
 
     public class MakeSoundVisitor : IAnimalVisitor
@@ -19,5 +20,6 @@ namespace PatternsForFun.Visitors
         public void Visit(Cat cat) { Console.WriteLine("Classic Meow"); }
         public void Visit(Dog dog) { Console.WriteLine("Classic Woof"); }
         public void Visit(Shiba shiba) { Console.WriteLine("Classic Hmph"); }
+        public void Visit(Mutant mutant) { Console.WriteLine("Class MutantRoar!"); }
     }
 }

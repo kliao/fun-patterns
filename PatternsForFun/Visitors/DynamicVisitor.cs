@@ -17,6 +17,7 @@ namespace PatternsForFun.Visitors
         public abstract void Visit(Dog dog);
         public abstract void Visit(Cat cat);
         public abstract void Visit(Shiba shiba);
+        public abstract void Visit(Mutant mutant);
     }
 
     public class MakeSoundDynamicVisitor : DynamicVisitor
@@ -24,5 +25,13 @@ namespace PatternsForFun.Visitors
         public override void Visit(Dog dog) { Console.WriteLine("Dynamic Woof"); }
         public override void Visit(Cat cat) { Console.WriteLine("Dynamic Meow"); }
         public override void Visit(Shiba shiba) { Console.WriteLine("Dynamic Hmph"); }
+        public override void Visit(Mutant mutant)
+        {
+            Console.WriteLine("Dynamic MutantRoar!");
+            foreach (var animal in mutant.Animals)
+            {
+                Visit((dynamic)animal);
+            }
+        }
     }
 }
